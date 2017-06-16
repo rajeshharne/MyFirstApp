@@ -1,0 +1,423 @@
+include mixins/panel
+
+.content-layout
+  section#form-basic-container
+    h3 Basic Form Elements
+
+    +panel('Default Form Inputs')
+      mixin body
+        .docs-example
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-3.control-label(for='field-1') Field 1
+              .col-sm-5
+                input#field-1.form-control(placeholder='Placeholder')
+            .form-group
+              label.col-sm-3.control-label(for='field-2') Disabled
+              .col-sm-5
+                input#field-2.form-control(placeholder='Placeholder', disabled)
+            .form-group
+              label.col-sm-3.control-label(for='field-3') Password
+              .col-sm-5
+                input#field-3.form-control(type='password', placeholder='Placeholder (Password)')
+            .form-group
+              label.col-sm-3.control-label(for='field-1') File Field
+              .col-sm-5
+                input#field-file.form-control(type='file', placeholder='Placeholder')
+            .form-group
+              label.col-sm-3.control-label(for='field-ta-1') Textarea
+              .col-sm-5
+                textarea#field-ta-1.form-control(placeholder='Textarea')
+            .form-group
+              label.col-sm-3.control-label(for='field-ta-2') Autogrow
+              .col-sm-5
+                textarea#field-ta-2.form-control.autogrow(placeholder='I will grow as you type new lines.', style='overflow: hidden; word-wrap: break-word; resize: horizontal; height: 48px;')
+            .form-group.has-error
+              label.col-sm-3.control-label(for='field-4') Error field
+              .col-sm-5
+                input#field-4.form-control(placeholder='Placeholder')
+            .form-group.has-warning
+              label.col-sm-3.control-label(for='field-5') Warning field
+              .col-sm-5
+                input#field-5.form-control(placeholder='Placeholder')
+            .form-group.has-success
+              label.col-sm-3.control-label(for='field-6') Success field
+              .col-sm-5
+                input#field-6.form-control(placeholder='Placeholder')
+            .form-group
+              label.col-sm-3.control-label Select List
+              .col-sm-5
+                select.form-control
+                  option Option 1
+                  option Option 2
+                  option Option 3
+                  option Option 4
+                  option Option 5
+            .form-group
+              .col-sm-offset-3.col-sm-5
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Checkbox 1
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Checkbox 2
+            .form-group
+              .col-sm-offset-3.col-sm-5
+                .radio
+                  label
+                    input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked)
+                    | Radio Input 1
+                .radio
+                  label
+                    input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+                    | Radio Input 2
+            .form-group
+              .col-sm-offset-3.col-sm-5
+                button.btn.btn-success(type='button', role='button') Sign in
+
+    +panel('Input Sizes')
+      mixin body
+        .docs-example
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-3.control-label(for='field-1') Large
+              .col-sm-5
+                input#field-1.form-control.input-lg(placeholder='Large input (.input-lg)')
+            .form-group
+              label.col-sm-3.control-label(for='field-1') Medium
+              .col-sm-5
+                input#field-1.form-control(placeholder='Normal input')
+            .form-group
+              label.col-sm-3.control-label(for='field-1') Small
+              .col-sm-5
+                input#field-1.form-control.input-sm(placeholder='Large input (.input-sm)')
+
+    +panel('Input Groups &amp; Addons')
+      mixin body
+        .docs-example
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-3.control-label Left addon
+              .col-sm-5
+                .input-group
+                  span.input-group-addon @
+                  input.form-control(placeholder='Username')
+            .form-group
+              label.col-sm-3.control-label Right addon
+              .col-sm-5
+                .input-group
+                  input.form-control(type='text')
+                  span.input-group-addon .00
+            .form-group
+              label.col-sm-3.control-label Both addons
+              .col-sm-5
+                .input-group
+                  span.input-group-addon $
+                  input.form-control(type='text')
+                  span.input-group-addon .00
+            .form-group
+              label.col-sm-3.control-label Icon addon
+              .col-sm-5
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-envelope
+                  input.form-control(type='email', placeholder='Email')
+            .form-group
+              label.col-sm-3.control-label Minimal type addon
+              .col-sm-5
+                .input-group.minimal
+                  span.input-group-addon
+                    i.fa.fa-envelope
+                  input.form-control(type='email', placeholder='Email')
+                br
+                .input-group.minimal
+                  input.form-control(placeholder='Username')
+                  span.input-group-addon
+                    i.fa.fa-user
+            .form-group
+              label.col-sm-3.control-label Buttons assigned
+              .col-sm-5
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-success(type='button') Go!
+                  input.form-control(type='text')
+                br
+                .input-group
+                  input.form-control(type='text')
+                  span.input-group-btn
+                    button.btn.btn-primary(type='button') Go!
+            .form-group
+              label.col-sm-3.control-label Dropdowns assigned
+              .col-sm-5
+                .input-group
+                  .input-group-btn
+                    button.btn.btn-gold.dropdown-toggle(type='button', data-toggle='dropdown')
+                      | Action
+                      span.caret
+                    ul.dropdown-menu.dropdown-gold
+                      li
+                        a Action
+                      li
+                        a Another action
+                      li
+                        a Something else here
+                      li.divider
+                      li
+                        a Separated link
+                  input.form-control(type='text')
+                br
+                .input-group
+                  input.form-control(type='text')
+                  .input-group-btn
+                    .btn-group
+                      button.btn.btn-info(type='button') Action
+                      button.btn.btn-info.dropdown-toggle(type='button', data-toggle='dropdown')
+                        i.fa.fa-info
+                      ul.dropdown-menu.dropdown
+                        li
+                          a Action
+                        li
+                          a Another action
+                        li
+                          a Something else here
+                        li.divider
+                        li
+                          a Separated link
+
+    +panel('Replaced Checkboxes &amp; Radio')
+      mixin body
+        .docs-example
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-3.control-label Checkboxes
+              .col-sm-5
+                .clearfix
+                  checkbox Checkbox 1
+                .clearfix
+                  checkbox(checked) Checkbox 2
+                .clearfix
+                  label.checkbox.checkbox-replace
+                    checkbox(disabled) Checkbox 3
+                .clearfix
+                  checkbox(checked, disabled) Checkbox 4
+
+            .form-group
+              label.col-sm-3.control-label Radio Inputs
+              .col-sm-5
+                .clearfix
+                  radio Radio 1
+                .clearfix
+                  radio(checked) Radio 2
+                .clearfix
+                  radio(disabled) Radio 3
+                .clearfix
+                  radio(checked, disabled) Radio 4
+
+            .form-group
+              label.col-sm-3.control-label Colors
+              .col-sm-5
+                .clearfix
+                  radio.radio-blue(checked) Radio 1
+                .clearfix
+                  radio.radio-cyan(checked) Radio 2
+                .clearfix
+                  radio.radio-green(checked) Radio 3
+                .clearfix
+                  radio.radio-yellow(checked) Radio 4
+                .clearfix
+                  checkbox.checkbox-orange(checked) Checkbox 5
+                .clearfix
+                  checkbox.checkbox-red(checked) Checkbox 6
+                .clearfix
+                  checkbox.checkbox-pink(checked) Checkbox 7
+                .clearfix
+                  checkbox.checkbox-amethyst(checked) Checkbox 8
+
+    +panel('Switches - Checkbox &amp; Radio')
+      mixin body
+        .docs-example
+          form.form-horizontal(role='form')
+            .form-group
+              label.col-sm-3.control-label Toggle Check
+              .col-sm-5
+                switch(checked)
+
+            .form-group
+              label.col-sm-3.control-label Toggle Sizes
+              .col-sm-5
+                switch.switch-lg(checked)
+                switch.switch-md(checked)
+                switch.switch-sm(checked)
+                switch.switch-xs(checked)
+
+            .form-group
+              label.col-sm-3.control-label Disabled
+              .col-sm-5
+                switch(disabled)
+                switch(checked, disabled)
+
+            .form-group
+              label.col-sm-3.control-label Apply Icon
+              .col-sm-5
+                switch
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+            .form-group
+              label.col-sm-3.control-label Colors
+              .col-sm-5
+                switch.switch-blue(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-cyan(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-green(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-yellow(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-orange(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-red(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-pink(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-amethyst(checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+            .form-group
+              label.col-sm-3.control-label Radio
+              .col-sm-5
+                switch.switch-blue(type='radio', ng-model="switchRadio", checked)
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-cyan(type='radio', ng-model="switchRadio")
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-green(type='radio', ng-model="switchRadio")
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+                switch.switch-yellow(type='radio', ng-model="switchRadio")
+                  on
+                    i.fa.fa-check
+                  off
+                    i.fa.fa-times
+
+    +panel('Input Grid')
+      mixin body
+        .docs-example
+          .row
+            .col-md-12
+              input.form-control(placeholder='col-md-12')
+
+          .row
+            .col-md-6
+              input.form-control(placeholder='col-md-6')
+            .col-md-6
+              input.form-control(placeholder='col-md-6')
+          
+          .row
+            .col-md-4
+              input.form-control(placeholder='col-md-4')
+            .col-md-4
+              input.form-control(placeholder='col-md-4')
+            .col-md-4
+              input.form-control(placeholder='col-md-4')
+          
+          .row
+            .col-md-3
+              input.form-control(placeholder='col-md-3')
+            .col-md-3
+              input.form-control(placeholder='col-md-3')
+            .col-md-3
+              input.form-control(placeholder='col-md-3')
+            .col-md-3
+              input.form-control(placeholder='col-md-3')
+          
+          .row
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+            .col-md-2
+              input.form-control(placeholder='col-md-2')
+          
+          .row
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
+            .col-md-1
+              input.form-control(placeholder='col-md-1')
